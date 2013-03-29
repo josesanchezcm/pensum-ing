@@ -1,16 +1,16 @@
 <?php
 
-class Usuario extends CI_Controller{
+class usuario extends CI_Controller{
 
 
   public function __construct(){
     parent::__construct();
-    $this->load->model('Usuario_model');
+    $this->load->model('usuario_model');
   }
 
 
   public function index(){
-    $data['usuario'] = $this->Usuario_model->get_user();
+    $data['usuario'] = $this->usuario_model->get_user_by_carne('200718898');
 
     $data['title'] = 'usuarios';
     $this->load->view('usuario/index', $data);
@@ -18,7 +18,7 @@ class Usuario extends CI_Controller{
 
 
   public function view($carne){
-    $data['usuario'] = $this->Usuario_model->get_user($carne);
+    $data['usuario'] = $this->usuario_model->get_user_by_carne($carne);
 
     if(empty($data['usuario'])){
       $this->load->view('usuario/view', $data);

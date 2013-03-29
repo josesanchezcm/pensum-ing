@@ -5,6 +5,6 @@
 <div id = "main">
 				<?php echo $u['text']; ?>
 </div>
- <p><a href="news/<?php echo $u['carne'] ?>">View article</a></p>
+ <p><a href="news/<?php echo $u['usuario']->nombre ?>">View article</a></p>
 
 <?php endforeach ?>
